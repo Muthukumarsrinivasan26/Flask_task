@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Billing System</h1>
+<nav>
+    <a href="/">Generate Bill</a> |
+    <a href="/history">Purchase History</a>
+</nav>
+<hr>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flash">
+    {% for c,m in messages %}
+      <li><strong>{{ c }}:</strong> {{ m }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

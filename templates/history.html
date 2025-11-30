@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Purchase History</h2>
+
+<form method="GET">
+    Search Email:
+    <input type="email" name="email" value="{{ email }}">
+    <button>Search</button>
+</form>
+
+<ul>
+{% for p in purchases %}
+    <li>
+        Invoice #{{ p.id }} — {{ p.created_at }}
+        <a href="/purchase/{{ p.id }}">View</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.flash li {
+    list-style: none;
+    padding: 5px;
+    background: #ffe4e4;
+    margin: 5px 0;
+}
+
+.row {
+    margin-bottom: 10px;
+}
